@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+      <meta charset="UTF-8">
+      <title>Psychic Game</title>
+</head>
+<body>
+
+    <h1>This is a Phychic Game </h1>
+
+    <h2>Guess what letter I'm thinking of? </h2>
+
+    <h2 id="wins" > Wins: </h2>
+
+    <h2 id="losses"> Losses: </h2>
+
+    <h2 id="guess"> Guesses Left: </h2>
+
+    <h2 id="guessSoFar"> Your Guesses So Far: </h2>
+
+    <script type="text/javascript">
+
+//You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
+
+//Guess what letter I'm thinking of
+
+//Wins: (# of times the user has guessed the letter correctly)
+
+//Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
+
+//Guesses Left: (# of guesses left. This will update)
+
+//Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
+
+//When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
+
+//When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+
+/////  attempt with Alvaro! //////////
+        var letters = ["l", "m", "n",];
+        var wins = 0;
+        var lose = 0;
+        var guessesLeft = 10;
+        var guessesSoFar = [];
+
+        var computerGuess = letters [Math.floor(Math.random()*letters.length)];
+
+        document.onkeyup = function(event) {
+            var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+                if ( guessesLeft != 0) {
+                    
+                    if ( userGuess == computerGuess ) {
+                        wins++;
+                        computerGuess = letters [Math.floor(Math.random()*letters.length)];
+                    } else {
+                        lose++;
+                        guessesLeft--;
+                        guessesSoFar.push(userGuess);
+                    }
+
+                } else {
+                    alert('GAME OVER');
+                    wins = 0;
+                    lose = 0;
+                    guessesLeft = 10;
+                    guessesSoFar = [];
+                }
+                   
+                    document.getElementById("wins").innerHTML = " Wins: " + wins;
+                    document.getElementById("losses").innerHTML = " Losses: " + lose;
+                    document.getElementById("guess").innerHTML = "Guesses Left: " + guessesLeft;
+                    document.getElementById("guessSoFar").innerHTML = "Your Guesses So Far: " + guessesSoFar;
+        }
+
+</script>
+
+</body>
+</html>
+
+
+<!-- The Instructions to the game: -->
+ <!-- You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page: -->
+
+<!-- Guess what letter I'm thinking of -->
+
+<!-- Wins: (# of times the user has guessed the letter correctly) -->
+
+
+<!-- Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses) -->
+
+<!-- Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.) -->
+
+<!-- When the player wins, increase the Wins counter and start the game over again (without refreshing the page). -->
+
+<!-- When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
+
+
+<!-- /////////////// My original psychic game (to be read as: pre-tutor) attempt below AND below that is my attempt at hangman ///////
+    
+    // var options = ["l", "m", "n"];
+    // var wins = 0;
+    // var lose = 0;
+
+    //     document.onkeyup = function() {
+    //         var userguess = String.fromCharCode(event.keyCode)
+    //          toLowerCase();
+
+    //         console.log(userguess);
+    //     }
+
+    // var computerGuess = options [Math.floor(Math.random()*options.length)];
+    
+    //         console.log(computerGuess)
+    
+    // if (userguess=='l' || userguess=='m' || userguess=='n'){
+    //     if ((userguess=='l') && (computerGuess=='m')) {
+    //         wins++;
+    //         alert ("You Win!: " + win);
+    //     }
+    //     if ((userguess=='l') && (computerGuess=='n')) {
+    //         wins++;
+    //         alert ("You Win!: " + win);
+    //     }
+    //     if ((userguess== 'l') && (computerGuess=='l')) {
+    //         lose++;
+    //         alert ("You Lose, because it's a tie!: " + lose);
+    //     }
+    //     if ((userguess=='m') && (computerGuess=='l')) {
+    //         win++;
+    //         alert ("You Win!");
+    //     }
+    //     if ((userguess== 'm') && (computerGuess=='n')){
+    //         wins++;
+    //         alert ("You Win!: " + win);
+    //     } 
+    //     if ((userguess== 'm') && (computerGuess=='l')){
+    //         wins++;
+    //         alert ("You Win!: " + win);  
+    //     }
+    //     if ((userguess=='n') && (computerGuess=='n')){
+    //         lose++;
+    //         alert ("You Lose, because it's a tie!: " + lose);
+    //     }
+    //     if ((userguess=='n') && (computerGuess=='m')){
+    //         wins++;
+    //         alert ("You Win!: " + win);
+    //     }
+    //     if ((userguess=='n') && (computerGuess=='l')){
+    //         wins++;
+    //         alert ("You Win!: " + win);
+    //     }
+
+        // }else{
+        //      alert ("Try Again!")
+        //  } 
+        //     console.log(userGuess)
+
+
+</script>
+
+</body>
+</html> -->
+
+<!-- I started with hangman, essentially throwing code up on the screen, working it in trying to make sense of everything, just to realize that, at this time, hangman is too lofty of a task for me -->
+<!-- 
+//         function init(){
+//     renderer.backgroundColor = 0x22A7F0;
+//     renderer.render(stage);
+//     loop();
+// }
+
+//     document.onkeyup = function(question){
+//             var response = question.key;
+//             if(response === questions[questionIndex].a){
+//                 alert("Correct!");
+//                 score++;
+//                 scoreEl.textContent = score;
+
+//     var userName= prompt ("What is your name?");
+//     var confirmGames= confirm ("Do you like games?");
+//     document.write("what is your name?");
+//     doucment.write("Do you like games?");
+
+//     var options = ["j", "u", "m", "p"];
+
+//     document.onekeyup = (funtion ())
+//         var userGuess = String.fromCharCode (event.keyCode)
+//         toLowerCase();
+
+//     console.log (userguess);
+
+//     var computerGuess = options [Math.floor(Math.random()*options.length)];
+
+//     console.log (computerGuess);
+
+//     if(userguess== 'j' || userguess== 'u' || userguess== 'm' || userguess== 'p'){
+//             alert ("Your Are Correct!")
+//        }else{
+//             alert ("Try Again!")
+//         } 
+
+ 
+     </script>
+
+    <!- </body>
+    </html> -->
+     
