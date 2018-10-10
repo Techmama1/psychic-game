@@ -22,5 +22,10 @@ body {
 }
 h1 {
     text-align: center;
-    
+    background-color: darkgoldenrod;     
+}
+
+.container2 {
+    text-align: center;
+    flex-direction: column-reverse;
 }
