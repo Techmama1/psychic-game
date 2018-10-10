@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=K2D');
+
+.container {
+   padding:100px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   font-family: 'K2D', sans-serif
+}
+body {
+    background-color: aqua;
+    background-image: url("");
+}
+h1 {
+    text-align: center;
+    
+}
