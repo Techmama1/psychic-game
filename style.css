@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=K2D');
 
 .container {
-   padding:40px;
+   padding:60px;
    display: flex;
    justify-content: right;
-   flex-direction: column; 
+   flex-direction: column;  
    text-align: center;
    /* flex-direction: row-reverse;  */
    font-family: 'K2D', sans-serif;
@@ -22,10 +22,24 @@ body {
 }
 h1 {
     text-align: center;
-    background-color: darkgoldenrod;     
+    background-color: darkgoldenrod;  
+    border: 40px;   
 }
 
-.container2 {
-    text-align: center;
-    flex-direction: column-reverse;
+#guess {
+ padding-left: 275px;
 }
+
+#guessSoFar {
+    padding-left: 328px;
+
+}
+
+#wins {
+    padding-left: 413px;
+}
+
+#losses {
+    padding-left: 410px;
+}
+
